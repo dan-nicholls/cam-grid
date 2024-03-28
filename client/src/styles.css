@@ -29,6 +29,18 @@ nav h1 {
   padding: 20px 0px;
 }
 
+@media (max-width: 1000px) {
+  .camera-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .camera-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* CameraItem Styles */
 .camera-item {
   margin: 0 auto;
@@ -47,11 +59,11 @@ nav h1 {
   object-fit: cover;
   transition:
     transform 0.3s ease-in-out,
-    filter 0.3s ease-in-out; /* Smooth transition for scaling */
+    filter 0.3s ease-in-out;
 }
 
 .camera-image-container:hover img {
-  transform: scale(1.05); /* Slightly scale up on hover */
+  transform: scale(1.05);
   filter: brightness(80%);
 }
 
@@ -59,21 +71,21 @@ nav h1 {
   position: absolute;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  background: rgba(0, 0, 0, 0.5);
   color: white;
   text-align: center;
   padding: 10px;
 }
 
 .overlay-top {
-  top: 0; /* Position at the top */
+  top: 0;
 }
 
 .overlay-bottom {
-  bottom: 0; /* Position at the bottom */
+  bottom: 0;
 }
 
 .camera-name,
 .camera-ip {
-  margin: 0; /* Remove margin for p elements */
+  margin: 0;
 }
