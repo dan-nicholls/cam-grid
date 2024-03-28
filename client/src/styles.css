@@ -1,0 +1,79 @@
+/* App Styles */
+.App {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+/* NavBar Styles */
+nav {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+/* CameraGrid Styles */
+.camera-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px 0px;
+}
+
+/* CameraItem Styles */
+.camera-item {
+  margin: 0 auto;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.camera-image-container {
+  position: relative;
+  width: 100%;
+}
+
+.camera-image-container img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  transition:
+    transform 0.3s ease-in-out,
+    filter 0.3s ease-in-out; /* Smooth transition for scaling */
+}
+
+.camera-image-container:hover img {
+  transform: scale(1.05); /* Slightly scale up on hover */
+  filter: brightness(80%);
+}
+
+.overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+.overlay-top {
+  top: 0; /* Position at the top */
+}
+
+.overlay-bottom {
+  bottom: 0; /* Position at the bottom */
+}
+
+.camera-name,
+.camera-ip {
+  margin: 0; /* Remove margin for p elements */
+}

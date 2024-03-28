@@ -1,15 +1,14 @@
-import logo from "./logo.svg";
-import "./App.css";
+import React from "react";
+import NavBar from "./components/NavBar";
+import CameraGrid from "./components/CameraGrid";
+
+import "./styles.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          <code>cam-grid</code> App
-        </p>
-      </header>
+      <NavBar />
+      <CameraGrid />
     </div>
   );
 }
