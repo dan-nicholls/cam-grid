@@ -1,26 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CameraItem from "./CameraItem";
 
 function CameraGrid() {
-  const cameras = [{
-    id: 1,
-    ip: "192.168.0.1",
-    name: "Camera #1",
-    rtsp: "rtsp://192.168.0.1/test",
-    imageUrl: "",
-  }, {
-    id: 2,
-    ip: "192.168.0.2",
-    name: "Camera #2",
-    rtsp: "rtsp://192.168.0.2/test",
-    imageUrl: "",
-  }, {
-    id: 3,
-    ip: "192.168.0.3",
-    name: "Camera #3",
-    rtsp: "rtsp://192.168.0.3/test",
-    imageUrl: "",
-  }];
+  const [cameras, setCameras] = useState([]);
+
+  useEffect(() => {
+    const fetchCameras = async () => {
+      const response = await fetch("http://localhost:3002/api/cameras");
+      const data = await response.json();
+      setCameras(data);
+    };
+
+    fetchCameras();
+  }, []);
 
   return (
     <div className="camera-grid">
