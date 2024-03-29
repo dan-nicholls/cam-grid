@@ -9,8 +9,14 @@ app.use(cors());
 
 const cameras = require("./cameras.json");
 
-const cameras = app.get("/api/cameras", (req, res) => {
+app.get("/api/cameras", (req, res) => {
   res.json(cameras);
+});
+
+app.get("/api/cameras/random", (req, res) => {
+  const cameraIndex = Math.floor(Math.random() * cameras.length);
+  let camera = cameras[cameraIndex];
+  res.json(camera);
 });
 
 app.get("/", (req, res) => {
