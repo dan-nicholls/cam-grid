@@ -9,6 +9,7 @@ const port = 3002;
 const host = "0.0.0.0";
 
 app.use(cors());
+app.use(express.json());
 app.use("/api/cameras", cameraRouter);
 
 app.get("/", (req, res) => {

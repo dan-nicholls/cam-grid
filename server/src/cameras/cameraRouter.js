@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const cameraController = require("./cameraController");
 
+router.post("/", cameraController.createCamera);
 router.get("/", cameraController.getAllCameras);
-// router.get("/random", cameraController.getRandomCamera);
 
 module.exports = router;
